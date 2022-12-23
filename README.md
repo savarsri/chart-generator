@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Svelte + Vite
 
 This template should help get you started developing with Svelte in Vite.
@@ -45,3 +46,7 @@ If you have state that's important to retain within a component, consider creati
 import { writable } from 'svelte/store'
 export default writable(0)
 ```
+=======
+# chart-generator
+Chart generator web application using Svelte.
+>>>>>>> ca968003ef18c1f4493fab14c90c1da2f5f9909a
