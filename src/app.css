@@ -46,10 +46,10 @@ body{
   font-family: Arial;
   border-width:1px;
   color:rgba(0, 0, 0, 1);
-  border-color:#D8D8DA;
+  border-color: rgba(0, 102, 255, 1);
   border-radius:8px;
   box-shadow: 2px 2px 15px -6px rgba(15, 15, 15, 1);
-  background:#D8D8DA;
+  background:#ededed;
 }
 
 .secondaryButton:hover {
