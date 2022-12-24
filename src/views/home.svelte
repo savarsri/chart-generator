@@ -4,7 +4,7 @@
 
 <main>
     <div id="container">
-        <div id="wrapper">
+        <div class="wrapper">
             <div class="style1">
                 Create <br>Your Chart
             </div>
@@ -16,6 +16,7 @@
                     Create Chart
                 </button>
             </div>
+            <!-- <img src="src/assets/chart-background.jpg" alt="Background"> -->
         </div>
     </div>
 </main>
@@ -25,6 +26,15 @@
         width: 236px;
         height: 67px;
         font-size: 24px;
+        margin: 75px 0;
+    }
+
+    .style1{
+        margin: 10px 0;
+    }
+
+    .style2{
+        margin: 25px 0;
     }
 
     #container{
@@ -32,12 +42,18 @@
         margin: 25px auto;
         display: flex;
         height: 590px;
-        width: 1278px;
-        background-color: antiquewhite;
+        width: 1196px;
+        background-color: white;
+        background-image: url("src/assets/chart-background.jpg"); 
+        background-color: #ffffff; 
+        background-position: center; 
+        background-size: cover; 
     }
 
-    #wrapper{
-        margin: auto;
+    .wrapper{
+        margin: auto 100px;
+        text-align: left;
+        
     }
 
 </style>
