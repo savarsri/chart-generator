@@ -31,7 +31,6 @@
     #name{
         color: black;
         margin: auto 10px;
-        vertical-align: middle;
     }
 
     #logo{

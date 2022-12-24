@@ -5,10 +5,13 @@
 
 <main>
   <div>
+    <Header/>
+  </div>
+  <div>
     <Home/>
   </div>
 </main>
 
 <style>
-  
+
 </style>
