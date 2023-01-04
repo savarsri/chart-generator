@@ -13,22 +13,22 @@
         imgSrc: 'src/assets/bar-chart.png'
     }
 
-    let horiBarChart={
-        title: 'Horizontal Bar Chart',
-        description: 'Horizontal bar graphs represent the data horizontally',
-        imgSrc: 'src/assets/hori-bar-chart.png'
-    }
-
     let lineChart={
         title: 'Line Chart',
         description: "Graphical representation of an asset's historical price action that connects a series of data points with a continuous line.",
         imgSrc: 'src/assets/line-chart.png'
     }
-
+    
     let radarChart={
         title: 'Radar Chart',
         description: 'A radar chart is a graphic that displays three or more variables growing out of its core.',
         imgSrc: 'src/assets/radar-chart.png'
+    }
+
+    let horiBarChart={
+        title: 'Horizontal Bar Chart',
+        description: 'Horizontal bar graphs represent the data horizontally',
+        imgSrc: 'src/assets/hori-bar-chart.png'
     }
 
     let doughnutChart={
