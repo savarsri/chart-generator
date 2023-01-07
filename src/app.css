@@ -75,5 +75,19 @@ body{
 
 .fullScreen{
   position: fixed;
-  top: 0; left: 0; bottom: 0; right: 0; overflow: auto;
+  top: 0; left: 0; bottom: 0; right: 0; overflow: hidden;
+}
+
+.data_Div{
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0; overflow: hidden;
+  background-color: #00000060;
+}
+
+.data_Div > div{
+  width: 95%;
+  height: 92%;
+  margin: 2%;
+  background-color: #3385FF;
+  border-radius: 8px;
 }

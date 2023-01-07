@@ -1,13 +1,12 @@
 <script>
-// @ts-nocheck
-
+  // @ts-nocheck
 
   import {
     Chart,
     getDatasetAtEvent,
     getElementAtEvent,
     getElementsAtEvent,
-  } from 'svelte-chartjs';
+  } from "svelte-chartjs";
 
   import {
     Chart as ChartJS,
@@ -20,7 +19,7 @@
     LinearScale,
     LineController,
     BarController,
-  } from 'chart.js';
+  } from "chart.js";
 
   ChartJS.register(
     LinearScale,
@@ -34,80 +33,120 @@
     BarController
   );
 
-
-  let len = 5;
-  let labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  $: labels.length = len;
-
-let data = {
-  labels,
-    datasets: [
+  let data_visible = false;
+  let index_labels , index_datasets;
+  let labels = ["January", "February", "March", "April", "May"];
+  let datasets = [
     {
-      type: 'bar',
-      label: 'Dataset 3',
-      backgroundColor: 'rgb(53, 162, 235)',
+      type: "bar",
+      label: "Blueberry",
+      backgroundColor: "rgb(53, 162, 235)",
       data: labels.map(() => Math.random() * 1000),
     },
     {
-      type: 'bar',
-      label: 'Dataset 3',
-      backgroundColor: 'rgb(53, 162, 235)',
+      type: "bar",
+      label: "Apples",
+      backgroundColor: "rgb(237, 37, 78)",
       data: labels.map(() => Math.random() * 1000),
     },
-    {
-      type: 'bar',
-      label: 'Dataset 3',
-      backgroundColor: 'rgb(53, 162, 235)',
-      data: labels.map(() => Math.random() * 1000),
-    },
-    {
-      type: 'bar',
-      label: 'Dataset 3',
-      backgroundColor: 'rgb(53, 162, 235)',
-      data: labels.map(() => Math.random() * 1000),
-    },
-  ],
-};
+  ];
 
+  $: data = {
+    labels,
+    datasets,
 
-function decrement(){
-    len = document.getElementById("myRange").value;
-    data=data;
-    console.log(len);
-}
+  };
 
-  </script>
-  
-     
-    <main class="fullScreen">
-        <div class="details">
-            <input id="inoutText" type="text" placeholder="Data 1">
-            <input id="myRange" type="range" min="1" max="10" value="5" on:input={decrement}>
+  const setData = () => {
+    data_visible = !data_visible;
+  }
+
+  const add_Dataset = () => {
+    datasets = [...datasets,{type: "bar", label: "Mangoes", backgroundColor: "rgb(234, 196, 53)", data: labels.map(() => Math.random() * 1000),}]
+  }
+
+  const add_Label = () => {
+    labels = [...labels,"June"];
+  }
+
+  const delete_Label = () => {
+    labels.splice(index_labels,1);
+    labels = labels;
+  }
+
+  const delete_Dataset = () => {
+    datasets.splice(index_datasets,1);
+    datasets = datasets;
+  }
+
+</script>
+
+<main class="fullScreen">
+  <div class="details">
+    <button on:click={setData}>Data</button>
+  </div>
+  {#if data_visible}
+    <div class="data_Div">
+      <div>
+        <div class="data_Div_Header">
+          <h3>Chart data</h3>
+          <button class="secondaryButton" on:click={setData}>X</button>
         </div>
-        <div class="chart">
-            <Chart type="bar" {data}/>
+        <div class="data_Div_Body">
+          {#each datasets as datasets , index }
+          <input type="text" bind:value={datasets.label}>
+          <button on:click={()=>{index_datasets=index; delete_Dataset();}}>-</button>
+          {/each}
+            {#each labels as labels , i}
+              <div>
+                <input type="text" bind:value={labels}>
+                <button on:click={()=>{index_labels=i; delete_Label();}}>-</button>
+                {#each datasets as datasets}
+                  <input type="text" bind:value={datasets.data[i]}> 
+                {/each}
+              </div>
+            {/each}
+            <button on:click={add_Label}>add label</button>
+            <button on:click={add_Dataset}>add Dataset</button>
+            
         </div>
-    </main>
+      </div>
+    </div>
+  {/if}
+  <div class="chart">
+    <Chart type="bar" {data} />
+  </div>
+</main>
 
+<style>
+  main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lime;
+  }
 
-  <style>
+  .details {
+    height: 100%;
+    width: 30%;
+    background-color: white;
+  }
 
-    main{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: lime;
-    }
+  .chart {
+    margin: 5%;
+    width: 70%;
+    background-color: white;
+  }
 
-    .details{
-        height: 100%;
-        width: 30%;
-        background-color: white;
-    }
+  .data_Div_Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aqua;
+  }
 
-    .chart{
-        margin: 5%;
-        width: 70%;
-        background-color: white;
-    }
-  </style>
+  .data_Div_Body{
+
+  }
+
+</style>

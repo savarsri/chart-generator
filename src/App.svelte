@@ -12,8 +12,8 @@
     <Home/>
 
     <Charts/>
-<!-- 
-    <BarChart/> -->
+
+    <BarChart/>
 
 </main>
 
