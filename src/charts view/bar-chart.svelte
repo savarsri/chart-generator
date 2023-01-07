@@ -41,20 +41,19 @@
       type: "bar",
       label: "Blueberry",
       backgroundColor: "rgb(53, 162, 235)",
-      data: labels.map(() => Math.random() * 1000),
+      data: labels.map(() => Math.round(Math.random() * 1000)),
     },
     {
       type: "bar",
       label: "Apples",
       backgroundColor: "rgb(237, 37, 78)",
-      data: labels.map(() => Math.random() * 1000),
+      data: labels.map(() => Math.round(Math.random() * 1000)),
     },
   ];
 
   $: data = {
     labels,
     datasets,
-
   };
 
   const setData = () => {
@@ -62,7 +61,7 @@
   }
 
   const add_Dataset = () => {
-    datasets = [...datasets,{type: "bar", label: "Mangoes", backgroundColor: "rgb(234, 196, 53)", data: labels.map(() => Math.random() * 1000),}]
+    datasets = [...datasets,{type: "bar", label: "Mangoes", backgroundColor: "rgb(234, 196, 53)", data: labels.map(() => Math.round(Math.random() * 1000)),}]
   }
 
   const add_Label = () => {
@@ -102,7 +101,7 @@
             {/each}
           </div>
             {#each labels as labels , i}
-              <div>
+              <div class="label_Div">
                 <input type="text" bind:value={labels}>
                 <button on:click={()=>{index_labels=i; delete_Label();}}>-</button>
                 {#each datasets as datasets}
@@ -149,7 +148,18 @@
   }
 
   .data_Div_Body{
+    overflow: auto;
+  }
 
+  .label_Div{
+    display: flex;
+    width: max-content;
+    background-color: aqua;
+    margin: 2%;
+  }
+
+  .label_Div > input{
+    margin: 0% 1%;
   }
 
   .dataset_Div{

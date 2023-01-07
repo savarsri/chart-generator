@@ -1,5 +1,8 @@
 <script>
     import ChartsCard from "./charts-card.svelte";
+    import Header from "./header.svelte";
+    import Home from "./home.svelte";
+    import {link} from 'svelte-spa-router'
 
     let pieChart={
         title: 'Pie Chart',
@@ -40,28 +43,42 @@
 </script>
 
 <main>
+    <Header/>
+    <Home/>
     <div id="container">
         <div class="row">
-            <div id="wrapper">
-                <ChartsCard {...pieChart}/>
-            </div>
-            <div id="wrapper">
-                <ChartsCard {...barChart}/>
-            </div>
-            <div id="wrapper">
-                <ChartsCard {...lineChart}/>
-            </div>
+            <a href="/pie-chart" use:link>
+                <div id="wrapper">
+                    <ChartsCard {...pieChart}/>
+                </div>
+            </a>
+            <a href="/bar-chart" use:link>
+                <div id="wrapper">
+                    <ChartsCard {...barChart}/>
+                </div>
+            </a>
+            <a href="/line-chart" use:link>
+                <div id="wrapper">
+                    <ChartsCard {...lineChart}/>
+                </div>
+            </a>
         </div>
        <div class="row">
-        <div id="wrapper">
-            <ChartsCard {...radarChart}/>
-        </div>
-        <div id="wrapper">
-            <ChartsCard {...horiBarChart}/>
-        </div>
-        <div id="wrapper">
-            <ChartsCard {...doughnutChart}/>
-        </div>
+        <a href="/radar-chart" use:link>
+            <div id="wrapper">
+                <ChartsCard {...radarChart}/>
+            </div>
+        </a>
+        <a href="/horiBar-chart" use:link>
+            <div id="wrapper">
+                <ChartsCard {...horiBarChart}/>
+            </div>
+        </a>
+        <a href="/doughnut-chart" use:link>
+            <div id="wrapper">
+                <ChartsCard {...doughnutChart}/>
+            </div>
+        </a>
        </div>    
     </div>
 </main>
@@ -88,6 +105,10 @@
 
     #wrapper:hover{
         cursor: pointer;
+    }
+
+    a{
+        text-decoration:none
     }
 
 </style>

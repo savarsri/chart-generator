@@ -89,5 +89,6 @@ body{
   height: 92%;
   margin: 2%;
   background-color: #3385FF;
+  overflow: auto;
   border-radius: 8px;
 }
