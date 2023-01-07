@@ -93,10 +93,14 @@
           <button class="secondaryButton" on:click={setData}>X</button>
         </div>
         <div class="data_Div_Body">
-          {#each datasets as datasets , index }
-          <input type="text" bind:value={datasets.label}>
-          <button on:click={()=>{index_datasets=index; delete_Dataset();}}>-</button>
-          {/each}
+          <div class="dataset_Div">
+            {#each datasets as datasets , index }
+            <div>
+              <input type="text" bind:value={datasets.label}>
+              <button on:click={()=>{index_datasets=index; delete_Dataset();}}>-</button>
+            </div>
+            {/each}
+          </div>
             {#each labels as labels , i}
               <div>
                 <input type="text" bind:value={labels}>
@@ -108,7 +112,6 @@
             {/each}
             <button on:click={add_Label}>add label</button>
             <button on:click={add_Dataset}>add Dataset</button>
-            
         </div>
       </div>
     </div>
@@ -147,6 +150,12 @@
 
   .data_Div_Body{
 
+  }
+
+  .dataset_Div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
   }
 
 </style>
