@@ -89,8 +89,30 @@
 
 <main class="fullScreen">
     <div class="details">
-        <div class="details">
-            <button on:click={setData}>Data</button>
+        <div id="heading">
+            Pie Chart
+        </div>
+        <div id="title">
+            <fieldset>
+                <legend>Details</legend>
+                <div style="margin: 2%;">
+                    <label for="title_input">Title: </label>
+                    <input type="text" id="title_input">
+                </div>
+                <div style="margin: 2%;">
+                    <label for="title_color_input">Color: </label>
+                    <input type="color" id="title_color_input">
+                </div>
+            </fieldset>
+        </div>
+        <div>
+            <button class="primaryButton" on:click={setData}>Data</button>
+        </div>
+        <div>
+            <button class="primaryButton">Download</button>
+            <a href="/">
+                <button class="secondaryButton">Back</button>
+            </a>
         </div>
         {#if data_visible}
             <div class="data_Div">
@@ -156,6 +178,10 @@
     }
 
     .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         height: 100%;
         width: 30%;
         background-color: white;
@@ -170,6 +196,24 @@
         background-color: white;
     }
 
-    .chart > div {
+    #heading{
+        margin: 2%;
+        font-family: monospace;
+        font-size: 32px;
+        font-weight: 600;
+        color: black;
+        text-align: left;
+        width: 95%;
+    }
+
+    #title{
+        display: flex;
+        flex-direction: column;
+        color: black;
+    }
+    #title>fieldset{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 </style>
