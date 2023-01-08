@@ -116,7 +116,7 @@
     </div>
   {/if}
   <div class="chart">
-    <Chart type="bar" {data} />
+    <Chart type="bar" {data}  options={{ responsive: true }}/>
   </div>
 </main>
 
