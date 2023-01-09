@@ -16,6 +16,7 @@
     let index_labels, index_datasets;
 
     let labels = ["Red", "Green", "Yellow", "Grey", "Dark Grey"];
+    let colors;
     let datasets = [
         {
             data: [300, 50, 100, 40, 120],
@@ -25,7 +26,6 @@
                 "#FDB45C",
                 "#949FB1",
                 "#4D5360",
-                "#AC64AD",
             ],
             hoverBackgroundColor: [
                 "#FF5A5E",
@@ -33,7 +33,6 @@
                 "#FFC870",
                 "#A8B3C5",
                 "#616774",
-                "#DA92DB",
             ],
         },
     ];
@@ -85,23 +84,24 @@
         datasets.splice(index_datasets, 1);
         datasets = datasets;
     };
+
+
+    console.log();
 </script>
 
 <main class="fullScreen">
     <div class="details">
-        <div id="heading">
-            Pie Chart
-        </div>
+        <div id="heading">Pie Chart</div>
         <div id="title">
             <fieldset>
                 <legend>Details</legend>
                 <div style="margin: 2%;">
                     <label for="title_input">Title: </label>
-                    <input type="text" id="title_input">
+                    <input type="text" id="title_input" />
                 </div>
                 <div style="margin: 2%;">
                     <label for="title_color_input">Color: </label>
-                    <input type="color" id="title_color_input">
+                    <input type="color" id="title_color_input" />
                 </div>
             </fieldset>
         </div>
@@ -127,10 +127,9 @@
                         <div class="dataset_Div">
                             {#each datasets as datasets, index}
                                 <div>
-                                    <input
-                                        type="text"
-                                        bind:value={datasets.label}
-                                    />
+                                    <h4>
+                                        Dataset {index + 1}
+                                    </h4>
                                     <button
                                         on:click={() => {
                                             index_datasets = index;
@@ -150,6 +149,7 @@
                                     }}>-</button
                                 >
                                 {#each datasets as datasets}
+                                    <input type="color" id="data_color" bind:value={datasets.backgroundColor[i]} />
                                     <input
                                         type="text"
                                         bind:value={datasets.data[i]}
@@ -196,7 +196,35 @@
         background-color: white;
     }
 
-    #heading{
+    .data_Div_Header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: aqua;
+    }
+
+    .data_Div_Body {
+        overflow: auto;
+    }
+
+    .label_Div {
+        display: flex;
+        width: max-content;
+        background-color: aqua;
+        margin: 2%;
+    }
+
+    .label_Div > input {
+        margin: 0% 1%;
+    }
+
+    .dataset_Div {
+        display: flex;
+        flex-direction: row;
+        margin-left: 15%;
+    }
+
+    #heading {
         margin: 2%;
         font-family: monospace;
         font-size: 32px;
@@ -206,12 +234,12 @@
         width: 95%;
     }
 
-    #title{
+    #title {
         display: flex;
         flex-direction: column;
         color: black;
     }
-    #title>fieldset{
+    #title > fieldset {
         display: flex;
         flex-direction: column;
         width: 100%;
