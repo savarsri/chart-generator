@@ -15,8 +15,7 @@
     let data_visible = false;
     let index_labels, index_datasets;
 
-    let labels = ["Red", "Green", "Yellow", "Grey", "Dark Grey"];
-    let colors;
+    let labels = ["Red", "Green", "Yellow", "Grey", "Blue"];
     let datasets = [
         {
             data: [300, 50, 100, 40, 120],
