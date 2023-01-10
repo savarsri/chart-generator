@@ -40,14 +40,13 @@
             label: "Dataset 1",
             fill: true,
             lineTension: 0.3,
-            backgroundColor: "rgba(225, 204,230, .3)",
-            borderColor: "rgb(205, 130, 158)",
+            borderColor: "#CD829E",
             borderCapStyle: "butt",
             borderDash: [],
             borderDashOffset: 0.0,
             borderJoinStyle: "miter",
-            pointBackgroundColor: "rgb(205, 130, 158)",
-            pointHoverBackgroundColor: "rgb(255, 255, 255)",
+            pointBackgroundColor: "#CD829E",
+            pointHoverBackgroundColor: "#ffffff",
             pointHitRadius: 10,
             pointRadius: 5,
             data: [65, 59, 80, 81, 56, 55, 40],
@@ -56,14 +55,13 @@
             label: "Dataset 2",
             fill: true,
             lineTension: 0.3,
-            backgroundColor: "rgba(184, 185, 210, .3)",
-            borderColor: "rgb(35, 26, 136)",
+            borderColor: "#231A88",
             borderCapStyle: "butt",
             borderDash: [],
             borderDashOffset: 0.0,
             borderJoinStyle: "miter",
-            pointBackgroundColor: "rgb(35, 26, 136)",
-            pointHoverBackgroundColor: "rgb(255, 255, 255)",
+            pointBackgroundColor: "#231A88",
+            pointHoverBackgroundColor: "#ffffff",
             pointRadius: 5,
             pointHitRadius: 10,
             data: [28, 48, 40, 19, 86, 27, 90],
@@ -86,14 +84,13 @@
                 label: "New Dataset",
                 fill: true,
                 lineTension: 0.3,
-                backgroundColor: "rgba(184, 185, 210, .3)",
-                borderColor: "rgb(255, 78, 0)",
+                borderColor: "#FF4E00",
                 borderCapStyle: "butt",
                 borderDash: [],
                 borderDashOffset: 0.0,
                 borderJoinStyle: "miter",
-                pointBackgroundColor: "rgb(255, 78, 0)",
-                pointHoverBackgroundColor: "rgb(255, 255, 255)",
+                pointBackgroundColor: "#FF4E00",
+                pointHoverBackgroundColor: "#ffffff",
                 pointRadius: 5,
                 pointHitRadius: 10,
                 data: [68, 41, 20, 39, 66, 47, 57],
@@ -142,6 +139,9 @@
                                         delete_Dataset();
                                     }}>-</button
                                 >
+                                <input type="color" id="data_color" bind:value={datasets.borderColor} />
+                                <input type="color" id="point_color" bind:value={datasets.pointBackgroundColor} />
+                                <input type="range" min="0" max="10" bind:value={datasets.borderDash} />
                             </div>
                         {/each}
                     </div>
