@@ -42,7 +42,7 @@
             lineTension: 0.3,
             borderColor: "#CD829E",
             borderCapStyle: "butt",
-            borderDash: [],
+            borderDash: [0],
             borderDashOffset: 0.0,
             borderJoinStyle: "miter",
             pointBackgroundColor: "#CD829E",
@@ -57,7 +57,7 @@
             lineTension: 0.3,
             borderColor: "#231A88",
             borderCapStyle: "butt",
-            borderDash: [],
+            borderDash: [0],
             borderDashOffset: 0.0,
             borderJoinStyle: "miter",
             pointBackgroundColor: "#231A88",
@@ -86,7 +86,7 @@
                 lineTension: 0.3,
                 borderColor: "#FF4E00",
                 borderCapStyle: "butt",
-                borderDash: [],
+                borderDash: [0],
                 borderDashOffset: 0.0,
                 borderJoinStyle: "miter",
                 pointBackgroundColor: "#FF4E00",
@@ -141,7 +141,7 @@
                                 >
                                 <input type="color" id="data_color" bind:value={datasets.borderColor} />
                                 <input type="color" id="point_color" bind:value={datasets.pointBackgroundColor} />
-                                <input type="range" min="0" max="10" bind:value={datasets.borderDash} />
+                                <input type="range" min="0" max="20" bind:value={datasets.borderDash[0]} />
                             </div>
                         {/each}
                     </div>
