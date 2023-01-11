@@ -3,9 +3,6 @@
 
   import {
     Chart,
-    getDatasetAtEvent,
-    getElementAtEvent,
-    getElementsAtEvent,
   } from "svelte-chartjs";
 
   import {
@@ -116,7 +113,7 @@
     </div>
   {/if}
   <div class="chart">
-    <Chart type="bar" {data}  options={{ responsive: true }}/>
+    <Chart type="bar" {data}  options={{ responsive: true, }}/>
   </div>
 </main>
 
