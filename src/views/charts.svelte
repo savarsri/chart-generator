@@ -40,13 +40,17 @@
         imgSrc: 'src/assets/doughnut-chart.png'
     }
 
+    const scroll_to_charts = () => {
+        
+    }
+
 </script>
 
 <main>
     <Header/>
-    <Home/>
+    <Home on:btnClick={scroll_to_charts}/>
     <div id="container">
-        <div class="row">
+        <div class="row" >
             <a href="/pie-chart" use:link>
                 <div id="wrapper">
                     <ChartsCard {...pieChart}/>
