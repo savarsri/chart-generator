@@ -37,13 +37,13 @@
       {
         type: "bar",
         label: "Blueberry",
-        backgroundColor: "rgb(53, 162, 235)",
+        backgroundColor: "#34a2ea",
         data: labels.map(() => Math.round(Math.random() * 1000)),
       },
       {
         type: "bar",
         label: "Apples",
-        backgroundColor: "rgb(237, 37, 78)",
+        backgroundColor: "#ED254E",
         data: labels.map(() => Math.round(Math.random() * 1000)),
       },
     ];
@@ -58,7 +58,7 @@
     }
   
     const add_Dataset = () => {
-      datasets = [...datasets,{type: "bar", label: "Mangoes", backgroundColor: "rgb(234, 196, 53)", data: labels.map(() => Math.round(Math.random() * 1000)),}]
+      datasets = [...datasets,{type: "bar", label: "Mangoes", backgroundColor: "#f5bb00", data: labels.map(() => Math.round(Math.random() * 1000)),}]
     }
   
     const add_Label = () => {
@@ -93,6 +93,7 @@
               {#each datasets as datasets , index }
               <div>
                 <input type="text" bind:value={datasets.label}>
+                <input type="color" bind:value={datasets.backgroundColor}>
                 <button on:click={()=>{index_datasets=index; delete_Dataset();}}>-</button>
               </div>
               {/each}

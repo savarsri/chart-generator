@@ -17,7 +17,6 @@
     "/radar-chart": RadarChart,
     "/horiBar-chart": HoriBarChart,
     "/doughnut-chart": DoughnutChart,
-
     "*": NotFound,
   }
 </script>

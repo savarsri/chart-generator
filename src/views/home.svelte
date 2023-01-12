@@ -4,7 +4,7 @@
     const dispatch = createEventDispatcher();
 
     function btnClick () {
-        dispatch('btnClick')
+        dispatch('btnClick');
     }
 </script>
 
