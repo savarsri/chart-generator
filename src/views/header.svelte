@@ -4,14 +4,16 @@
 
 <main>
     <div class="header">
-        <div class="nameLogoDiv">
-            <div id="logo">
-                <img src="src/assets/chartify-logo.png" alt="Logo" height="50px">
+        <a href="/" style="text-decoration: none;">
+            <div class="nameLogoDiv">
+                <div id="logo">
+                    <img src="src/assets/chartify-logo.png" alt="Logo" height="50px">
+                </div>
+                <div id="name">
+                    <h2>Chartify</h2>
+                </div>
             </div>
-            <div id="name">
-                <h2>Chartify</h2>
-            </div>
-        </div>
+        </a>
         <div class="buttonDiv">
             <div class="center">
                 <button class="primaryButton">
