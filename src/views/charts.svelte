@@ -41,7 +41,7 @@
     }
 
     const scroll_to_charts = () => {
-        
+        window.scrollTo(0, 725);
     }
 
 </script>
