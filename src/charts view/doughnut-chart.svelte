@@ -157,6 +157,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 89%;
   }
   
     .details {
@@ -168,6 +169,9 @@
     .chart {
       margin: 5%;
       width: 70%;
+      height: 95%;
+      display: flex;
+      justify-content: center;
       background-color: white;
     }
   

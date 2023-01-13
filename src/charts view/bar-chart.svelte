@@ -130,11 +130,12 @@
     background: lime;
   }
 
-  main>div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  main > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 89%;
+    }
 
   .details {
     height: 100%;
