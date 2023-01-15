@@ -87,7 +87,7 @@
     }
   
     const add_Label = () => {
-      labels = [...labels,"June"];
+      labels = [...labels,"Blue"];
     }
   
     const delete_Label = () => {
