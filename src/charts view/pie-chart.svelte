@@ -1,6 +1,8 @@
 <script>
     import { Pie } from "svelte-chartjs";
 
+    import html2canvas from "html2canvas";
+
     import {
         Chart as ChartJS,
         Title,
@@ -9,6 +11,7 @@
         ArcElement,
         CategoryScale,
     } from "chart.js";
+
     import Header from "../views/header.svelte";
 
     ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
@@ -85,11 +88,16 @@
         datasets = datasets;
     };
 
-    console.log();
+    const download = () => {
+        html2canvas(document.querySelector("#chart")).then((canvas) => {
+            document.body.appendChild(canvas);
+        });
+        console.log("hi");
+    };
 </script>
 
 <main class="fullScreen">
-    <Header/>
+    <Header />
     <div>
         <div class="details">
             <div id="heading">Pie Chart</div>
@@ -110,7 +118,9 @@
                 <button class="primaryButton" on:click={setData}>Data</button>
             </div>
             <div>
-                <button class="primaryButton">Download</button>
+                <button class="primaryButton" on:click={download}
+                    >Download</button
+                >
                 <a href="/">
                     <button class="secondaryButton">Back</button>
                 </a>
@@ -153,7 +163,8 @@
                                         <input
                                             type="color"
                                             id="data_color"
-                                            bind:value={datasets.backgroundColor[i]}
+                                            bind:value={datasets
+                                                .backgroundColor[i]}
                                         />
                                         <input
                                             type="text"
