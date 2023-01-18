@@ -1,6 +1,7 @@
 <script>
     import { Pie } from "svelte-chartjs";
 
+    import downloadjs from "downloadjs";
     import html2canvas from "html2canvas";
 
     import {
@@ -88,11 +89,12 @@
         datasets = datasets;
     };
 
-    const download = () => {
-        html2canvas(document.querySelector("#chart")).then((canvas) => {
-            document.body.appendChild(canvas);
-        });
-        console.log("hi");
+    const download = async () => {
+        const chart = document.getElementById("chart");
+        if (!chart) return;
+        const canvas = await html2canvas(chart);
+        const dataURL = canvas.toDataURL("image/png");
+        downloadjs(dataURL, "download.png", "image/png");
     };
 </script>
 
@@ -180,7 +182,7 @@
                 </div>
             {/if}
         </div>
-        <div class="chart">
+        <div id="chart" class="chart">
             <Pie {data} options={{ responsive: true }} />
         </div>
     </div>
