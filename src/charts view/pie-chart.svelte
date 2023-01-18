@@ -1,8 +1,10 @@
 <script>
-    import { Pie } from "svelte-chartjs";
+    // @ts-nocheck
 
+    import { Pie } from "svelte-chartjs";
     import downloadjs from "downloadjs";
     import html2canvas from "html2canvas";
+    import {adjust} from "../functions.js";
 
     import {
         Chart as ChartJS,
@@ -18,7 +20,10 @@
     ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
     let data_visible = false;
-    let index_labels, index_datasets;
+    let index_labels,
+        index_datasets,
+        title = "Pie Chart",
+        title_color = "#ffffff";
 
     let labels = ["Red", "Green", "Yellow", "Grey", "Dark Grey"];
     let datasets = [
@@ -94,8 +99,18 @@
         if (!chart) return;
         const canvas = await html2canvas(chart);
         const dataURL = canvas.toDataURL("image/png");
-        downloadjs(dataURL, "download.png", "image/png");
+        downloadjs(dataURL, title+".png", "image/png");
     };
+
+    const title_color_change = () => {
+        document.getElementById("chart_title").style.color = title_color;
+    };
+
+    const hover_color_change = () => {
+        datasets[index_datasets].hoverBackgroundColor[index_labels] = adjust(datasets[index_datasets].backgroundColor[index_labels],20);
+    };
+
+    
 </script>
 
 <main class="fullScreen">
@@ -108,11 +123,21 @@
                     <legend>Details</legend>
                     <div style="margin: 2%;">
                         <label for="title_input">Title: </label>
-                        <input type="text" id="title_input" />
+                        <input
+                            type="text"
+                            id="title_input"
+                            bind:value={title}
+                            maxlength="50"
+                        />
                     </div>
                     <div style="margin: 2%;">
                         <label for="title_color_input">Color: </label>
-                        <input type="color" id="title_color_input" />
+                        <input
+                            type="color"
+                            id="title_color_input"
+                            bind:value={title_color}
+                            on:change={title_color_change}
+                        />
                     </div>
                 </fieldset>
             </div>
@@ -161,12 +186,17 @@
                                             delete_Label();
                                         }}>-</button
                                     >
-                                    {#each datasets as datasets}
+                                    {#each datasets as datasets, ind}
                                         <input
                                             type="color"
                                             id="data_color"
                                             bind:value={datasets
                                                 .backgroundColor[i]}
+                                            on:change={() => {
+                                                index_datasets = ind;
+                                                index_labels = i;
+                                                hover_color_change();
+                                            }}
                                         />
                                         <input
                                             type="text"
@@ -182,8 +212,11 @@
                 </div>
             {/if}
         </div>
-        <div id="chart" class="chart">
-            <Pie {data} options={{ responsive: true }} />
+        <div id="chart">
+            <h2 id="chart_title">{title}</h2>
+            <div>
+                <Pie {data} options={{ responsive: true }} />
+            </div>
         </div>
     </div>
 </main>
@@ -212,13 +245,22 @@
         background-color: white;
     }
 
-    .chart {
+    #chart {
         display: flex;
         justify-content: center;
-        margin: 5%;
-        height: 90%;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
         width: 70%;
-        background-color: white;
+        background-color: rgb(215, 215, 215);
+    }
+
+    #chart > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 85%;
+        width: 100%;
     }
 
     .data_Div_Header {
