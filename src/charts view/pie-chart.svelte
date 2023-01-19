@@ -23,7 +23,7 @@
     let index_labels,
         index_datasets,
         title = "Pie Chart",
-        title_color = "#ffffff";
+        title_color = "#000000";
 
     let labels = ["Red", "Green", "Yellow", "Grey", "Dark Grey"];
     let datasets = [
@@ -140,16 +140,25 @@
                     </div>
                 </fieldset>
             </div>
-            <div>
-                <button class="primaryButton" on:click={setData}>Data</button>
+            <div id="title">
+                <fieldset>
+                    <legend>Data</legend>
+                    <div>
+                        <label for="set_data_button">Set Data: </label>
+                        <button id="set_data_button" class="primaryButton" on:click={setData}>Data</button>
+                    </div>
+                </fieldset>
             </div>
-            <div>
-                <button class="primaryButton" on:click={download}
-                    >Download</button
-                >
-                <a href="/">
-                    <button class="secondaryButton">Back</button>
-                </a>
+            <div id="title">
+                <fieldset style="flex-direction: row; justify-content:space-around" >
+                    <legend>Options</legend>
+                    <button class="primaryButton" on:click={download}
+                        >Download</button
+                    >
+                    <a href="/">
+                        <button class="secondaryButton">Back</button>
+                    </a>
+                </fieldset>
             </div>
             {#if data_visible}
                 <div class="data_Div">
@@ -211,8 +220,9 @@
                 </div>
             {/if}
         </div>
+        <div class="vl"></div>
         <div id="chart">
-            <h2 id="chart_title">{title}</h2>
+            <h2 class="chart_title">{title}</h2>
             <div>
                 <Pie {data} options={{ responsive: true }} />
             </div>
@@ -224,20 +234,19 @@
     main {
         display: flex;
         flex-direction: column;
-        background: lime;
     }
 
     main > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 89%;
+        height: 90%;
     }
 
     .details {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         height: 100%;
         width: 30%;
@@ -251,7 +260,8 @@
         flex-direction: column;
         height: 100%;
         width: 70%;
-        background-color: rgb(215, 215, 215);
+        padding: 2%;
+        background-color: rgb(255, 255, 255);
     }
 
     #chart > div {
@@ -290,14 +300,6 @@
         margin-left: 15%;
     }
 
-    #title {
-        display: flex;
-        flex-direction: column;
-        color: black;
-    }
-    #title > fieldset {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+    
+
 </style>

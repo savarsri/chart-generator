@@ -26,7 +26,7 @@ body{
 }
 
 .primaryButton{
-  width: 75px;
+  width: 80px;
   height: 36px;
   font-size:15px;
   font-family:Arial;
@@ -44,7 +44,7 @@ body{
 }
 
 .secondaryButton {
-  width: 75px;
+  width: 80px;
   height: 36px;
   font-size:15px;
   font-family: Arial;
@@ -95,4 +95,24 @@ body{
   background-color: #3385FF;
   overflow: auto;
   border-radius: 8px;
+}
+
+.vl {
+  border-left: 4px solid #b9b9b9  ;
+  height: 100%;
+}
+
+.chart_title{
+  color: black;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+#title > fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
