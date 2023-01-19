@@ -1,5 +1,5 @@
 <script>
-
+    export let title="Chartify";
 </script>
 
 <main>
@@ -10,7 +10,7 @@
                     <img src="src/assets/chartify-logo.png" alt="Logo" height="50px">
                 </div>
                 <div id="name">
-                    <h2>Chartify</h2>
+                    <h2>{title}</h2>
                 </div>
             </div>
         </a>

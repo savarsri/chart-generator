@@ -85,7 +85,7 @@
 </script>
 
 <main class="fullScreen">
-    <Header />
+    <Header title="Radar Chart"/>
     <div>
         <div class="details">
             <button on:click={setData}>Data</button>

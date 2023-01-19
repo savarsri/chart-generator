@@ -80,7 +80,7 @@
 </script>
 
 <main class="fullScreen">
-  <Header/>
+  <Header title="Bar Chart"/>
   <div>
     <div class="details">
       <button on:click={setData}>Data</button>

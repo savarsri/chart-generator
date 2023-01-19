@@ -84,7 +84,7 @@
 </script>
 
 <main class="fullScreen">
-  <Header />
+  <Header title="Horizontal Bar Chart"/>
   <div>
     <div class="details">
       <button on:click={setData}>Data</button>

@@ -115,7 +115,7 @@
 </script>
 
 <main class="fullScreen">
-    <Header />
+    <Header title="Line Chart"/>
     <div>
         <div class="details">
             <button on:click={setData}>Data</button>

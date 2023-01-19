@@ -103,7 +103,7 @@
   </script>
   
   <main class="fullScreen">
-    <Header/>
+    <Header title="Doughnut Chart"/>
     <div>
       <div class="details">
         <button on:click={setData}>Data</button>

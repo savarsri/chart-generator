@@ -114,10 +114,9 @@
 </script>
 
 <main class="fullScreen">
-    <Header />
+    <Header title="Pie Chart"/>
     <div>
         <div class="details">
-            <div id="heading">Pie Chart</div>
             <div id="title">
                 <fieldset>
                     <legend>Details</legend>
@@ -289,16 +288,6 @@
         display: flex;
         flex-direction: row;
         margin-left: 15%;
-    }
-
-    #heading {
-        margin: 2%;
-        font-family: monospace;
-        font-size: 32px;
-        font-weight: 600;
-        color: black;
-        text-align: left;
-        width: 95%;
     }
 
     #title {
