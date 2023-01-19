@@ -200,6 +200,7 @@
                                         <input
                                             type="color"
                                             id="data_color"
+                                            style="min-width: 3%;  margin: 0% 1%;"
                                             bind:value={datasets
                                                 .backgroundColor[i]}
                                             on:change={() => {
@@ -276,7 +277,7 @@
 
     .label_Div {
         display: flex;
-        background-color: aqua;
+        flex-direction: row;
         margin: 2%;
     }
 
