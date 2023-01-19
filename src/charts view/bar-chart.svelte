@@ -115,6 +115,7 @@
               id="title_input"
               bind:value={title}
               maxlength="50"
+              style="background-color: white; color:black"
             />
           </div>
           <div style="margin: 2%;">

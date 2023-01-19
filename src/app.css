@@ -36,25 +36,6 @@ body{
   overflow-x: auto;
 }
 
-#chart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 70%;
-  padding: 2%;
-  background-color: rgb(255, 255, 255);
-}
-
-#chart > div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 85%;
-  width: 100%;
-}
-
 .primaryButton{
   width: 80px;
   height: 36px;

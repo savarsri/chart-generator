@@ -127,6 +127,7 @@
                             id="title_input"
                             bind:value={title}
                             maxlength="50"
+                            style="background-color: white; color:black"
                         />
                     </div>
                     <div style="margin: 2%;">
@@ -172,18 +173,19 @@
                         <div class="data_Div_Body">
                             <div class="dataset_Div">
                                 {#each datasets as datasets, index}
-                                    <div>
-                                        <h4>
-                                            Dataset {index + 1}
-                                        </h4>
-                                        <button
-                                            on:click={() => {
-                                                index_datasets = index;
-                                                delete_Dataset();
-                                            }}>-</button
+                                <div>
+                                    <h4>
+                                        Dataset {index + 1}
+                                    </h4>
+                                    <button
+                                    on:click={() => {
+                                        index_datasets = index;
+                                        delete_Dataset();
+                                    }}>-</button
                                         >
                                     </div>
-                                {/each}
+                                    {/each}
+                                    <button on:click={add_Dataset}>add Dataset</button>
                             </div>
                             {#each labels as labels, i}
                                 <div class="label_Div">
@@ -214,7 +216,6 @@
                                 </div>
                             {/each}
                             <button on:click={add_Label}>add label</button>
-                            <button on:click={add_Dataset}>add Dataset</button>
                         </div>
                     </div>
                 </div>
@@ -275,13 +276,12 @@
 
     .label_Div {
         display: flex;
-        width: max-content;
         background-color: aqua;
         margin: 2%;
     }
 
     .label_Div > input {
-        margin: 0% 1%;
+        margin: 0;
     }
 
     .dataset_Div {
