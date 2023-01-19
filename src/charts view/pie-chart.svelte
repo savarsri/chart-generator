@@ -5,6 +5,7 @@
     import downloadjs from "downloadjs";
     import html2canvas from "html2canvas";
     import {adjust} from "../functions.js";
+    import Header from "../views/header.svelte";
 
     import {
         Chart as ChartJS,
@@ -15,7 +16,6 @@
         CategoryScale,
     } from "chart.js";
 
-    import Header from "../views/header.svelte";
 
     ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
@@ -222,7 +222,7 @@
         </div>
         <div class="vl"></div>
         <div id="chart">
-            <h2 class="chart_title">{title}</h2>
+            <h2 id="chart_title" class="chart_title">{title}</h2>
             <div>
                 <Pie {data} options={{ responsive: true }} />
             </div>
@@ -299,7 +299,5 @@
         flex-direction: row;
         margin-left: 15%;
     }
-
-    
 
 </style>

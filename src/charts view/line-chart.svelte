@@ -246,7 +246,7 @@
         </div>
         <div class="vl"></div>
         <div id="chart">
-            <h2 class="chart_title">{title}</h2>
+            <h2 id="chart_title" class="chart_title">{title}</h2>
             <div>
                 <Line {data} options={{ responsive: true }} />
             </div>

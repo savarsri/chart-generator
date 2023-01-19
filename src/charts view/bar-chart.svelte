@@ -193,7 +193,7 @@
     </div>
     <div class="vl" />
     <div id="chart">
-      <h2 class="chart_title">{title}</h2>
+      <h2 id="chart_title" class="chart_title">{title}</h2>
       <div>
         <Chart type="bar" {data} options={{ responsive: true }} />
       </div>
