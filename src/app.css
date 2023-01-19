@@ -25,6 +25,35 @@ body{
   margin: 0;
 }
 
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  background-color: white;
+  overflow-x: auto;
+}
+
+#chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+  padding: 2%;
+  background-color: rgb(255, 255, 255);
+}
+
+#chart > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 85%;
+  width: 100%;
+}
 
 .primaryButton{
   width: 80px;

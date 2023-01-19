@@ -243,16 +243,6 @@
         height: 90%;
     }
 
-    .details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-        width: 30%;
-        background-color: white;
-    }
-
     #chart {
         display: flex;
         justify-content: center;
@@ -260,7 +250,7 @@
         flex-direction: column;
         height: 100%;
         width: 70%;
-        padding: 2%;
+        padding: 0% 2%;
         background-color: rgb(255, 255, 255);
     }
 

@@ -246,17 +246,7 @@
     align-items: center;
     height: 90%;
   }
-
-  .details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-        width: 30%;
-        background-color: white;
-    }
-
+  
     #chart {
         display: flex;
         justify-content: center;
