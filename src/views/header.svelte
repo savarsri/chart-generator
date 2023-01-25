@@ -14,7 +14,7 @@
                 </div>
             </div>
         </a>
-        <div class="buttonDiv">
+        <!-- <div class="buttonDiv">
             <div class="center">
                 <button class="primaryButton">
                     Log In
@@ -25,7 +25,7 @@
                     Sign Up
                 </button>
             </div>
-        </div>
+        </div> -->
     </div>
 </main>
 
