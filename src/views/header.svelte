@@ -56,16 +56,4 @@
         display: flex;
     }
 
-    .buttonDiv{
-        margin: 0;
-        background-color: rgb(255, 255, 255);
-        padding: 5px;
-        position: relative;
-        display: flex;
-    }
-
-    .center{
-        margin: auto 10px;
-    }
-
 </style>
